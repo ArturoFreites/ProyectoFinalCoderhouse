@@ -8,12 +8,13 @@
     <title>3ER ENTREGA</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <nav class="navbar navbar-expand-sm navbar-dark" id="nav">
         <div class="container-fluid">
             <a class="navbar-brand" href="/index.html">
                 <img class="nav-logo" src="/mult/coderhouse-logo.png" alt="Coder House">
@@ -22,35 +23,144 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                <ul class="navbar-nav">
+                <ul class="navbar-nav" id="main-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="/index.html">Inicio</a>
+                        <a class="nav-link" href="#inicio">INICIO</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/productos.html">Productos</a>
+                        <a class="nav-link" href="#registro">REGISTRO</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/facturacion.html">Facturacion</a>
+                        <a class="nav-link" href="#tabla">TABLA DE PRODUCTOS</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#facturacion">FACTURACIÓN</a>
                     </li>
 
                 </ul>
             </div>
         </div>
     </nav>
+    <main>
 
+        <section id="inicio">
+            <h1> PROYECTO ALMACEN DE PRODUCTOS Y FACTURACIÓN </h1>
+            <div class="main-div">
+                <h2>Contenido</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores culpa consequuntur veritatis, cum
+                    temporibus
+                    suscipit, nisi id debitis numquam provident inventore delectus natus repellat aspernatur est
+                    architecto
+                    nam
+                    modi! Dolor.</p>
+            </div>
+        </section>
+
+
+
+        <section id="registro">
+            <h1>REGISTRO DE PRODUCTOS</h1>
+
+            <section class="form">
+                <form>
+                    <div class="mb-3 mt-3">
+                        <label for="email" class="form-label">ID:</label>
+                        <input type="number" class="form-control" id="form-id" placeholder="Ingrese ID de producto"
+                            name="form-id">
+                    </div>
+                    <div class="mb-3">
+                        <label for="pwd" class="form-label">Nombre Producto:</label>
+                        <input type="text" class="form-control" id="form-product" placeholder="Ingrese nombre producto"
+                            name="pswd">
+                    </div>
+                    <div class="mb-3 mt-3">
+                        <label for="email" class="form-label">Precio:</label>
+                        <input type="number" class="form-control" id="form-price" placeholder="Ingrese ID de producto"
+                            name="form-price">
+                    </div>
+                    <div class="mb-3 mt-3">
+                        <label for="email" class="form-label">Cantidad:</label>
+                        <input type="number" class="form-control" id="form-cantidad"
+                            placeholder="Ingrese ID de producto" name="form-cantidad">
+                    </div>
+                    <button type="button" class="btn btn-warning" id="btn-save">Guardar</button>
+                    <button type="button" class="btn btn-warning" id="btn-clean">Limpiar lista</button>
+                </form>
+            </section>
+
+        </section>
+
+        <section class="table-productos" id="tabla">
+            <h2>PRODUCTOS</h2>
+            <button class="btn btn-secondary" id="show">Mostrar</button>
+            <button class="btn btn-secondary" id="hide">Ocultar</button>
+
+            <table class="table table-hover" id="productosTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Precio</th>
+                        <th>Cantidad</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+        <section id="facturacion">
+            <h1>FACTURACIÓN</h1>
+
+            <section class="form">
+                <form>
+                    <div class="mb-3 mt-3">
+                        <label for="email" class="form-label">Nombre de Empresa</label>
+                        <input type="number" class="form-control" id="form-id" placeholder="Ingrese ID de producto"
+                            name="form-id">
+                    </div>
+                    <div class="mb-3">
+                        <label for="pwd" class="form-label">Nombre Producto:</label>
+                        <input type="text" class="form-control" id="form-product" placeholder="Ingrese nombre producto"
+                            name="pswd">
+                    </div>
+                    <div class="mb-3 mt-3">
+                        <label for="email" class="form-label">Precio:</label>
+                        <input type="number" class="form-control" id="form-price" placeholder="Ingrese ID de producto"
+                            name="form-price">
+                    </div>
+                    <div class="mb-3 mt-3">
+                        <label for="email" class="form-label">Cantidad:</label>
+                        <input type="number" class="form-control" id="form-cantidad"
+                            placeholder="Ingrese ID de producto" name="form-cantidad">
+                    </div>
+                    <button type="button" class="btn btn-warning" id="btn-save">Guardar</button>
+                    <button type="button" class="btn btn-warning" id="btn-clean">Limpiar lista</button>
+                </form>
+            </section>
+
+            <div>
+                <button type="button" class="btn btn-danger" id="print" onclick="printContent('tabla');" >Imprimir Factura</button>
+            </div>
+
+        </section>
+
+    </main>
     <section>
-        <h1> PROYECTO ALMACEN DE PRODUCTOS Y FACTURACIÓN </h1>
-        <div class="main-div">
-            <h2>Contenido</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores culpa consequuntur veritatis, cum
-                temporibus
-                suscipit, nisi id debitis numquam provident inventore delectus natus repellat aspernatur est architecto
-                nam
-                modi! Dolor.</p>
-        </div>
+        <a href="#nav" class="inicio"> <i class="fa fa-home inicio-icon" aria-hidden="true"></i> </a>
     </section>
 
+    <footer>
+
+    </footer>
+
     <!-- CARGA DE SCRIPTS -->
+
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
         integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
     </script>
@@ -58,6 +168,10 @@
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/js/guardarproductos.js"></script>
+    <script src="/js/productos.js"></script>
+    <script src="/js/funcionalidades.js"></script>
+
 
 </body>
 
