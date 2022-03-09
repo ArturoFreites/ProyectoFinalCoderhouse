@@ -48,12 +48,7 @@
             <h1> PROYECTO ALMACEN DE PRODUCTOS Y FACTURACIÓN </h1>
             <div class="main-div">
                 <h2>Contenido</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores culpa consequuntur veritatis, cum
-                    temporibus
-                    suscipit, nisi id debitis numquam provident inventore delectus natus repellat aspernatur est
-                    architecto
-                    nam
-                    modi! Dolor.</p>
+                <p>Debe seguir de forma secuencial todos las areas para poder imprimir la factura</p>
             </div>
         </section>
 
@@ -65,7 +60,7 @@
             <section class="form">
                 <form>
                     <div class="mb-3 mt-3">
-                        <label for="email" class="form-label">ID:</label>
+                        <label for="email" class="form-label">ID (iniciar siempre con 0):</label>
                         <input type="number" class="form-control" id="form-id" placeholder="Ingrese ID de producto"
                             name="form-id">
                     </div>
@@ -114,43 +109,111 @@
 
         </section>
 
+
+ <!-- ----------------------   FACTURACION --------------------------------- -->
+
+
         <section id="facturacion">
             <h1>FACTURACIÓN</h1>
 
             <section class="form">
                 <form>
+
+<!-- ----------------- AGREGAR EMPRESA ---------------------------------------- -->
+
                     <div class="mb-3 mt-3">
                         <label for="email" class="form-label">Nombre de Empresa</label>
-                        <input type="number" class="form-control" id="form-id" placeholder="Ingrese ID de producto"
+                        <input type="text" class="form-control" id="form-empresa" placeholder="Ingrese nombre de empresa"
                             name="form-id">
                     </div>
                     <div class="mb-3">
-                        <label for="pwd" class="form-label">Nombre Producto:</label>
-                        <input type="text" class="form-control" id="form-product" placeholder="Ingrese nombre producto"
-                            name="pswd">
+                        <label for="pwd" class="form-label">Cuit</label>
+                        <input type="number" class="form-control" id="form-cuit" placeholder="Ingrese cuit"
+                            name="cuit">
                     </div>
-                    <div class="mb-3 mt-3">
-                        <label for="email" class="form-label">Precio:</label>
-                        <input type="number" class="form-control" id="form-price" placeholder="Ingrese ID de producto"
-                            name="form-price">
+
+                    <button type="button" class="btn btn-warning" id="btn-agempresa"> Imprimir Impresa </button>
+
+ <!-- ----------------- AGREGAR PRODUCTO  ---------------------------------------- -->
+
+                    <div class="mb-3">
+                        <label for="pwd" class="form-label">ID producto</label>
+                        <input type="number" class="form-control" id="form-solicitaID" placeholder="Ingrese ID del producto a agregar"
+                            name="idsolicitud">
                     </div>
-                    <div class="mb-3 mt-3">
-                        <label for="email" class="form-label">Cantidad:</label>
-                        <input type="number" class="form-control" id="form-cantidad"
-                            placeholder="Ingrese ID de producto" name="form-cantidad">
+
+                    <div class="mb-3">
+                        <label for="pwd" class="form-label">Cantidad</label>
+                        <input type="number" class="form-control" id="form-cantidadFactura" placeholder="Ingrese cantidad de producto"
+                            name="cantproducto">
                     </div>
-                    <button type="button" class="btn btn-warning" id="btn-save">Guardar</button>
-                    <button type="button" class="btn btn-warning" id="btn-clean">Limpiar lista</button>
+
+                    <button type="button" class="btn btn-warning" id="btn-agproducto"> Agregar Producto </button>
+                    <button type="button" class="btn btn-warning" id="btn-impproductos"> Imprimir Productos </button>
+                    <button type="button" class="btn btn-danger" id="btn-total"> Terminar Factura </button>
+
                 </form>
             </section>
 
+
+<!-- ----------------- IMPRIMIR FACTURA  ---------------------------------------- -->
+
             <div>
-                <button type="button" class="btn btn-danger" id="print" onclick="printContent('tabla');" >Imprimir Factura</button>
+                <button type="button" class="btn btn-danger" id="print" onclick="printContent('factura');" >Imprimir Factura</button>
             </div>
 
         </section>
 
+        <section class="table-productos" id="factura">
+            <h2>FACTURA</h2>
+
+            <table class="table table-hover" id="factura-empresa">
+                <thead>
+                    <tr>
+                        <th>Empresa</th>
+                        <th>CUIT</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                </tbody>
+
+            </table>
+
+
+            <table class="table table-hover" id="factura-detalles">
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Cantidad</th>
+                        <th>Precio Unitario</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                </tbody>
+
+            </table>
+
+            <table class="table table-hover" id="factura-total">
+                <thead>
+                    <tr>
+                        <th>Precio Total</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                </tbody>
+
+            </table>
+
+        </section>
+
     </main>
+
     <section>
         <a href="#nav" class="inicio"> <i class="fa fa-home inicio-icon" aria-hidden="true"></i> </a>
     </section>
@@ -171,6 +234,7 @@
     <script src="/js/guardarproductos.js"></script>
     <script src="/js/productos.js"></script>
     <script src="/js/funcionalidades.js"></script>
+    <script src="/js/facturacion.js"></script>
 
 
 </body>
